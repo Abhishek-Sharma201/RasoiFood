@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div>
       <Nav />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
