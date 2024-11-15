@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 const page = () => {
   return (
     <div>
-      signup
+      Signup
       <Nav />
     </div>
   );
