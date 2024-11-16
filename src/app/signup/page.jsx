@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { FaUser, FaLock } from 'react-icons/fa';
-import { FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaUser, FaLock, FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa';
 
 export default function Signup() {
   const [username, setUsername] = useState('');
@@ -19,18 +18,13 @@ export default function Signup() {
     const response = await fetch('https://example.com/api/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password, role })
+      body: JSON.stringify({ username, password, role }),
     });
     const data = await response.json();
     console.log(data);
   };
 
   return (
-<<<<<<< Updated upstream
-    <div>
-      Signup
-      <Nav />
-=======
     <div className="flex items-center justify-center h-screen bg-gradient-to-r from-purple-400 to-blue-500">
       <div className="w-full max-w-md p-10 space-y-8 bg-white shadow-lg rounded-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800">Sign Up</h2>
@@ -40,17 +34,6 @@ export default function Signup() {
             <input
               type="text"
               placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-10 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-400 shadow-sm focus:outline-none transition duration-150"
-              required
-            />
-          </div>
-          <div className="relative">
-            <FaUser className="absolute left-3 top-3 text-gray-500" />
-            <input
-              type="email"
-              placeholder="email"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="w-full px-10 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-400 shadow-sm focus:outline-none transition duration-150"
@@ -117,7 +100,6 @@ export default function Signup() {
           <a href="/login" className="text-blue-600 hover:underline ml-2">Login</a>
         </p>
       </div>
->>>>>>> Stashed changes
     </div>
   );
 }
