@@ -3,7 +3,7 @@ import {
   FaSearch,
   FaMapMarkerAlt,
   FaPizzaSlice,
-  FaHamburger, // Updated from FaBurger to FaHamburger
+  FaHamburger,
   FaCoffee,
   FaStar,
 } from "react-icons/fa";
@@ -17,12 +17,12 @@ const Homepage = () => {
         style={{ backgroundImage: "url('https://example.com/hero-bg.jpg')" }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-4xl font-bold">
+        <div className="relative flex flex-col items-center justify-center h-full text-white px-4 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Discover the Best Food & Places Near You
           </h1>
-          <div className="flex items-center mt-6 space-x-4">
-            <div className="flex items-center bg-white rounded-full p-2 shadow-lg w-72">
+          <div className="flex flex-col sm:flex-row items-center mt-6 space-y-4 sm:space-y-0 sm:space-x-4 w-full max-w-3xl">
+            <div className="flex items-center bg-white rounded-full p-2 shadow-lg w-full sm:w-72">
               <FaMapMarkerAlt className="text-gray-400 ml-3" />
               <input
                 type="text"
@@ -30,7 +30,7 @@ const Homepage = () => {
                 className="flex-1 px-3 py-2 rounded-r-full focus:outline-none text-gray-700"
               />
             </div>
-            <div className="flex items-center bg-white rounded-full p-2 shadow-lg w-96">
+            <div className="flex items-center bg-white rounded-full p-2 shadow-lg w-full sm:w-96">
               <FaSearch className="text-gray-400 ml-3" />
               <input
                 type="text"
@@ -47,7 +47,7 @@ const Homepage = () => {
         <h2 className="text-2xl font-bold text-center mb-6">
           Popular Categories
         </h2>
-        <div className="flex justify-center space-x-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4 sm:px-10">
           <CategoryCard icon={<FaPizzaSlice />} title="Pizza" />
           <CategoryCard icon={<FaHamburger />} title="Burgers" />
           <CategoryCard icon={<FaCoffee />} title="Cafes" />
@@ -60,7 +60,7 @@ const Homepage = () => {
         <h2 className="text-2xl font-bold text-center mb-6">
           Featured Restaurants
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-10">
           <RestaurantCard
             name="Pizza Palace"
             location="New York, NY"

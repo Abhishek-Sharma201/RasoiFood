@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState } from 'react';
-import { FaUser, FaLock, FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa';
+import React, { useState } from "react";
+import { FaUser, FaLock, FaGoogle, FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function Signup() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [role, setRole] = useState('customer'); // 'customer' or 'admin'
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [role, setRole] = useState("customer"); // 'customer' or 'admin'
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -15,9 +15,9 @@ export default function Signup() {
       alert("Passwords don't match!");
       return;
     }
-    const response = await fetch('https://example.com/api/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const response = await fetch("https://example.com/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password, role }),
     });
     const data = await response.json();
@@ -25,9 +25,11 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-r from-purple-400 to-blue-500">
-      <div className="w-full max-w-md p-10 space-y-8 bg-white shadow-lg rounded-lg">
-        <h2 className="text-3xl font-bold text-center text-gray-800">Sign Up</h2>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 to-blue-500 px-4">
+      <div className="w-full max-w-md p-8 sm:p-10 space-y-8 bg-white shadow-lg rounded-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800">
+          Sign Up
+        </h2>
         <form onSubmit={handleSignup} className="space-y-6">
           <div className="relative">
             <FaUser className="absolute left-3 top-3 text-gray-500" />
@@ -97,7 +99,9 @@ export default function Signup() {
 
         <p className="text-center text-gray-600 mt-4">
           Already have an account?
-          <a href="/login" className="text-blue-600 hover:underline ml-2">Login</a>
+          <a href="/login" className="text-blue-600 hover:underline ml-2">
+            Login
+          </a>
         </p>
       </div>
     </div>

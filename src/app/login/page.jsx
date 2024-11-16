@@ -1,33 +1,35 @@
 "use client";
 
-import React, { useState } from 'react';
-import { FaUser, FaLock, FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa';
+import React, { useState } from "react";
+import { FaUser, FaLock, FaGoogle, FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://example.com/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
+    const response = await fetch("https://example.com/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
     });
     const data = await response.json();
     console.log(data);
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-r from-purple-400 to-blue-500">
-      <div className="w-full max-w-md p-10 space-y-8 bg-white shadow-lg rounded-lg">
-        <h2 className="text-3xl font-bold text-center text-gray-800">Login</h2>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 to-blue-500 px-4">
+      <div className="w-full max-w-md p-8 sm:p-10 space-y-8 bg-white shadow-lg rounded-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800">
+          Login
+        </h2>
         <form onSubmit={handleLogin} className="space-y-6">
           <div className="relative">
             <FaUser className="absolute left-3 top-3 text-gray-500" />
             <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="w-full px-10 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-400 shadow-sm focus:outline-none transition duration-150"
@@ -67,12 +69,19 @@ export default function Login() {
         </div>
 
         <div className="text-center text-gray-600 mt-4">
-          <a href="/forgot-password" className="text-blue-600 hover:underline">Forgot Password?</a>
+          <a
+            href="/forgot-password"
+            className="text-blue-600 hover:underline"
+          >
+            Forgot Password?
+          </a>
         </div>
 
         <p className="text-center text-gray-600 mt-4">
           Don't have an account?
-          <a href="/signup" className="text-blue-600 hover:underline ml-2">Sign Up</a>
+          <a href="/signup" className="text-blue-600 hover:underline ml-2">
+            Sign Up
+          </a>
         </p>
       </div>
     </div>
